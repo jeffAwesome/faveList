@@ -1,0 +1,10 @@
+{>error/}
+
+{<content}
+	  <h1>Error: {error.message}</h1>
+	  {?settings['verbose errors']}
+	    <pre> {error.stack}</pre>
+	  {:else}
+	    <p>An error ocurred!</p>
+	  {?settings['verbose errors']}
+ {/content}

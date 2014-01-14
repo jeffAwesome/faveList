@@ -1,0 +1,58 @@
+{>layout/}
+
+ {<content}
+
+{?user.firstName}
+	<h1> {user.firstName}'s Profile</h1>
+{:else}
+	<h1> {user.email}'s Profile</h1>
+{/user.firstName}
+
+
+<h2>Add a new favorite list</h2>
+<form id="create" method="POST" action="/create">		
+	<input type="text" name="name" id="createItem">
+</form>
+
+{?lists}
+	<h4>Current List of Faves</h4>
+{/lists}
+<ul class="lists">
+{#lists}
+	<a href="/fave/{id}" id="item-{id}""><li>{name}{~n}</li></a>
+{/lists}
+</ul>
+
+
+<ul class="favorites lists">
+{#lists}
+	<li id="item-{id}">{name}{~n}
+			{?items}
+				<ol class="favItems{id}">
+					{#items}
+						<li>{.}</li>
+					{/items}
+				</ol>
+			{/items}
+	</li>
+	<li data-id="item-{id}">
+		<form id="item{id}" class="addItem" method="POST" action="/addItems/{id}">
+			<input type="text" name="itemName">
+		</form>
+	</li>
+{:else}
+	<p>You don't have any favorite lists</p>
+{/lists}
+</ul>
+
+
+
+<a href="/logout">Logout</a>
+
+<script src="javascripts/profile.js"></script>
+<script>
+	Fave.start();
+</script>
+
+{/content}
+

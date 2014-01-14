@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FaveList - Error</title>
+      <link rel="stylesheet" href="bootstrap.min.css" />
+
+  </head>
+  <body>
+    <div class="container">
+    	<h1>An error occurred!</h1>
+         {+content}
+                        This is the base content.
+                {/content}
+    </div>
+
+  </body>
+
+</html>

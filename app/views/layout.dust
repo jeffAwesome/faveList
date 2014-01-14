@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FaveList</title>
+      <link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
+      <link rel="stylesheet" href="stylesheets/application.css" />
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script src="javascripts/underscore.js"></script>
+      <script src="javascripts/backbone.js"></script>
+      
+
+  </head>
+  <body>
+    <div class="container">
+         {+content}
+                        This is the base content.
+                {/content}
+    </div>
+
+  </body>
+
+</html>

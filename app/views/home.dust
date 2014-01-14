@@ -1,0 +1,12 @@
+{>layout/}
+
+{<content}
+
+{?user}
+	<h1>{user.firstName}</h1>
+	<a href="/logout">Logout</a> or <a href="/profile">Profile</a>
+{:else}
+  <a href="/auth/facebook">Login with facebook</a>
+{/user}
+
+{/content}

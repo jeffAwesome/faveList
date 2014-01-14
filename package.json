@@ -1,0 +1,28 @@
+{
+  "name": "PassportJS-Authentication",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "~3.1.0",
+    "jade": "*",
+    "mongodb": "*",
+    "nodemon": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "passport-facebook": "*",
+    "passport-google-oauth": "*",
+    "mongoose": "~3.6.4",
+    "connect-flash": "*",
+    "dustjs-linkedin": "~2.2.2",
+    "consolidate": "~0.10.0",
+    "backbone": "~1.1.0",
+    "backbone.marionette": "~1.2.3",
+    "logfmt": "~0.18.1"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
