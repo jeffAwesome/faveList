@@ -6,6 +6,7 @@
 	<h1>{user.firstName}</h1>
 	<a href="/logout">Logout</a> or <a href="/profile">Profile</a>
 {:else}
+  <h3>To save a list of all your favorite things you'll need to sign in with your facebook account.</h3>
   <a href="/auth/facebook">Login with facebook</a>
 {/user}
 
