@@ -6,16 +6,74 @@ body {
     height: 100%;
 }
 
+a {
+	font-size: 15px;
+}
+
+
+/* Layout */
+.row {
+	width: 86%;
+	margin: 0 auto;
+}
+.small {
+	width: 23%;
+	margin: 0 1%;
+	float: left;
+}
+
+.large {
+	width: 75%;
+	margin: 0 1%;
+	min-height: 300px;
+	height: auto;
+	float: left;
+}
+
+.span4 {
+	width: 40%;
+	margin: 0 1%;
+	float: left;
+}
+
+.span8 {
+	width: 55%;
+	margin: 0 1%;
+	float: left;
+}
+
+#subColumn {
+	margin: 15px 0;
+	font-size: 15px;
+}
+
+/* extras */
+.center {
+	text-align: center;
+}
+
 
 /* Add New Lists */
-#createItem {
-	width: 80%;
+#create {
+	width: 85%;
+	margin: 0 auto;
+}
+#createItem,
+.addItem {
+	width: 100%;
 	height: 75px;
-	font-size: 2em;
+	font-size: 2.3em;
 }
 
 .lists {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+}
+
+
+
+/* Backbone View */
+#favoriteItem {
+	margin: 15px 0;
 }

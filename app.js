@@ -14,7 +14,7 @@ var express = require('express'),
 /* var env = process.env.NODE_ENV || 'development',
   config = require('./config/config')[env]; */
 
-  var env = 'production',
+  var env = 'development',
       config = require('./config/config')[env];
 
 

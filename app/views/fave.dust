@@ -1,0 +1,31 @@
+{>layout-deep/}
+
+ {<content}
+
+	{?user.firstName}
+		<h1> {user.firstName}'s Profile</h1>
+	{:else}
+		<h1> {user.email}'s Profile</h1>
+	{/user.firstName}
+
+	<h3>{name} (favorite List)</h3>
+	<h5>Add New Item to Favorite List</h5>
+	<form id="item{id}" class="addItem" method="POST" action="/addItems/{id}">
+			<input type="text" name="itemName">
+		</form>
+
+	{?items}
+		<ol class="favItems{id}">
+			{#items}
+				<li>{.}</li>
+			{/items}
+		</ol>
+	{/items}
+
+
+	<a href="/profile">Back To Profile</a> | 
+	<a href="/logout">Logout</a>
+
+
+{/content}
+

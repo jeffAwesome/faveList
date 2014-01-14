@@ -9,50 +9,70 @@
 {/user.firstName}
 
 
-<h2>Add a new favorite list</h2>
+<h2 class="center">Add a new favorite list</h2>
 <form id="create" method="POST" action="/create">		
 	<input type="text" name="name" id="createItem">
 </form>
 
-{?lists}
-	<h4>Current List of Faves</h4>
-{/lists}
-<ul class="lists">
-{#lists}
-	<a href="/fave/{id}" id="item-{id}""><li>{name}{~n}</li></a>
-{/lists}
-</ul>
+<div class="row">
+
+	<div class="small" id="subColumn">
+
+		{?lists}
+			<h4>Current List of Faves</h4>
+		{/lists}
+		<nav id="favorites-list">
+			<ul class="lists">
+			{#lists}
+				<a href="/fave/{id}" data-ajax="/fave/{id}/json" id="item-{id}""><li>{name}{~n}</li></a>
+			{/lists}
+			</ul>
+		</nav>
+
+	</div>
+
+	<div class="large" id="favoriteItem">
+		<script id="FavoriteTemplate" type="text/template">
+
+			<div class="span4">
+
+			<% if (items.length > 0) { %>
+		    	<h4>Your Favorites for this list</h4>
+		    	<ul>
+		    	<%_.each(items, function(item) { %>
+		    		<li><%= item %></li>
+				<% }); %>
+				</ul>
+			<% } else { %>
+				<h4>You currently have no items in this list</h4>
+			<% } %>
+
+			</div>
+
+			<div class="span8">
+		    <h3>Favorite List: <%= name %></h3>
+		    <h5>Add a favorite item for this list</h5>
+		    <form id="item{id}" class="addItem" method="POST" action="/addItems/<%=id%>">
+				<input type="text" name="itemName">
+			</form>
+
+			</div>
+		</script>
+
+	</div>
 
 
-<ul class="favorites lists">
-{#lists}
-	<li id="item-{id}">{name}{~n}
-			{?items}
-				<ol class="favItems{id}">
-					{#items}
-						<li>{.}</li>
-					{/items}
-				</ol>
-			{/items}
-	</li>
-	<li data-id="item-{id}">
-		<form id="item{id}" class="addItem" method="POST" action="/addItems/{id}">
-			<input type="text" name="itemName">
-		</form>
-	</li>
-{:else}
-	<p>You don't have any favorite lists</p>
-{/lists}
-</ul>
 
+	<a href="/logout">Logout</a>
+</div> <!-- row -->
 
-
-<a href="/logout">Logout</a>
-
-<script src="javascripts/profile.js"></script>
-<script>
-	Fave.start();
-</script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script src="javascripts/underscore.js"></script>
+      <script src="javascripts/backbone.js"></script>
+	  <script src="javascripts/profile.js"></script>
+		<script>
+			Fave.start();
+		</script>
 
 {/content}
 

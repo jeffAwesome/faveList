@@ -69,4 +69,8 @@ module.exports = function(app, passport){
 
 	app.post( '/addItems/:list_id', List.addItems );
 
+	app.get("/fave/:id", Auth.isAuthenticated, List.fave );
+
+	app.get("/fave/:id/json", Auth.isAuthenticated, List.faveJson );
+
 }
